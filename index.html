@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your dream home with Bethtrealty – luxury real estate in Ogun State, Nigeria. Browse listings, learn tips, and book viewings.">
+    <title>Bethtrealty - Find Your Dream Property</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo"><a href="#home"><i class="fas fa-home"></i>Beth<span>reality</span></a></div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#listing">Listing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+
+            <a href="#contact" class="btn-cta">Book a viewing</a>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container" >
+            <h1>Find Your Dream Home with <span>Bethtrealty</span></h1>
+            <p>Luxury real estate made simple, stylish, and stress-free.</p>
+
+            <div class="hero-buttons">
+                <a href="#listing" class="btn-primary">Browse Listings</a>
+                <a href="#contact" class="btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!--listing section-->
+    <section id="listing" class="listings container">
+        <h2>Featured Properties</h2>
+        <p class="section-subtitle">Handpicked luxury homes, apartments, and estates just for you.</p>
+
+        <div class="listings-grid">
+
+            <!--1st card-->
+            <div class="listing-card">
+                <img src="Villa.jpg" alt="Luxury villa">
+                <div class="listing-info">
+                    <h3>Modern Luxury Villa</h3>
+                    <p>Abeokuta, Ogun State</p>
+                    <span class="price">#250,000,000</span>
+                    <a href="#contact" class="btn-primary small">View Details</a>
+                </div>
+            </div>
+
+            <!--2nd card-->
+            <div class="listing-card">
+                <img src="PentHouse.jpg" alt="Penthouse">
+                <div class="listing-info">
+                    <h3>Skyline Penthouse</h3>
+                    <p>Atan-Otta, Ogun State</p>
+                    <span class="price">#300,000,000</span>
+                    <a href="#contact" class="btn-primary small">View Details</a>
+                </div>
+            </div>
+
+            <!--3rd card-->
+            <div class="listing-card">
+                <img src="Seaside.jpg" alt="Seaside apartment">
+                <div class="listing-info">
+                    <h3>Seaside Beach House</h3>
+                    <p>Ago-Iwoye, Ogun State</p>
+                    <span class="price">#600,000,000</span>
+                    <a href="#contact" class="btn-primary small">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="why-choose container">
+        <h2>Why Choose Bethtrealty?</h2>
+        <p class="section-subtitle">We combine expertise, integrity, and style to deliver your dream home. And experience excellence in every step of your real estate journey.</p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="icon">🏆</div>
+                <h3>Trusted Expertise</h3>
+                <p>Years of experience in luxury real estate ensure you get the best guidance and support.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">💰</div>
+                <h3>Affordable Options</h3>
+                <p>Discover a range of properties that fit your budget without compromising on quality or style.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">🤝</div>
+                <h3>Professional Services</h3>
+                <p>Our team provides seamless, responsive, and Professional services and end-to-end support throughout your real estate journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog container">
+        <h2>Latest Blog Posts</h2>
+        <p class="section-subtitle">Insights, tips, and updates from Bethreality.</p>
+        <div class="blog-buttons">
+            <button id="openBlogModal">Publish Article</button>
+        </div>
+
+        <div id="featuredArticle" class="featured-article" data-aos="fade-up">
+         <!-- Featured article content will be inserted dynamically -->
+       </div>
+
+        <!--articles will be publish here-->
+        
+        <div class="blog-grid" id="blogGrid">
+
+        </div>
+    </section>
+
+    <div id="blogModal" class="modal hide">
+        <div class="modal-content">
+            <h3>Publish New Article</h3>
+            <form action="/" id="blogForm">
+                <label for="title">Article Title</label>
+                <input type="text" name="title" id="title" placeholder="Enter article title" required>
+
+                <label for="image">Article Image URL (optional)</label>
+                <input type="text" name="image" id="image" placeholder="Enter article image URL">
+
+                <label for="name">Author Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter author name" required>
+
+                <label for="content">Article Content</label>
+                <textarea name="content" id="content" placeholder="Enter article content" rows="6" required></textarea>
+
+                <div class="modal-button">
+                <button type="submit" class="btn-primary small">Publish Article</button>
+                <button type="button" class="btn-outline small" id="closeBlogModal">Cancel</button>
+                </div>
+
+                <!-- Read Article Modal -->
+    <div id="readModal" class="modal hide">
+     <div class="modal-content">
+            <h3 id="readTitle"></h3>
+            <p id="readBody"></p>
+            <p id="readAuthor" class="author"></p>
+            <div class="modal-buttons">
+             <button type="button" class="btn-outline small" id="closeReadModal">Close</button>
+            </div>
+       </div>
+    </div>
+            </form>
+        </div>
+    </div>
+
+    <section id="testimonials" class="testimonials container">
+        <h2>What Our Clients Say</h2>
+        <p class="section-subtitle">Hear from those who found their dream home with us.</p>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <p>"Bethreality made our villa seamless and enjoyable. Highly professional team!"</p>
+                <h4>- Prosper A.</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>“Amazing service! They helped us find a perfect apartment within our budget.”</p>
+                <h4>- Funke O.</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>“From start to finish, the experience was smooth. Beth Reality truly understands luxury real estate.”</p>
+                <h4>- Beth O.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact-->
+    <section id="contact" class="contact container">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you. Reach out with any questions or inquiries.</p>
+
+        <form action="/" id="contactForm" class="contact-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Your Phone Number" >
+            </div>
+
+            <div class="form-group">
+                <textarea  name="message" placeholder="Your Message" rows="6" required> </textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Get In Touch</button>
+        </form>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-left">
+            <h3>Bethtrealty</h3>
+            <p>Luxury Real Estate | Ogun State, Nigeria.</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Follow us</p>
+            <div class="socials-icon">
+                <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </div>
+    <p class="footer-bottom">&copy; 2024 Bethtrealty. All rights reserved.</p>
+</footer>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+</body>
+</html>
