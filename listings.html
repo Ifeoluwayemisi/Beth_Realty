@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings | BethRealty</title>
+    <meta name="description"
+        content="Browse premium real estate listings across Nigeria. Discover luxury homes, apartments, and land from BethRealty." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar glass-nav">
+        <div class="container nav-content">
+            <div class="logo"><a href="index.html"><i class="fas fa-home"></i>Beth<span>Realty</span></a></div>
+
+            <nav>
+                <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="listings.html" class="active">Listing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+
+            <a href="contact.html" class="btn-cta">Book a Viewing</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="listings-hero">
+        <div class="overlay"></div>
+        <div class="container hero-text">
+            <h1>Find Your Perfect Home</h1>
+            <p>Browse through exclusive properties across Lagos and Ogun. Smart homes. Serene environments. Affordable
+                luxury.</p>
+        </div>
+
+        <form class="filter-bar" data-aos="fade-up">
+            <select>
+                <option value="buy">Buy</option>
+                <option value="rent">Rent</option>
+            </select>
+            <select>
+                <option value="allLocation">All Locations</option>
+                <option value="lagos">Lagos State</option>
+                <option value="ogun">Ogun State</option>
+                <option value="abuja">Abuja</option>
+            </select>
+            <select>
+                <option value="prices">All Prices</option>
+                <option value="range1">₦500K - ₦900K</option>
+                <option value="range2">₦1M - ₦5M</option>
+                <option value="range3">₦5M - ₦10M</option>
+                <option value="range4">₦10M+</option>
+            </select>
+            <button class="btn-filter" type="submit"><i class="bx bx-search"></i> Search</button>
+        </form>
+    </section>
+
+    <!-- LISTINGS -->
+    <section class="property-listings container">
+        <div class="grid">
+            <!-- PROPERTY CARD -->
+            <article class="property-card" data-aos="zoom-in">
+                <div class="image-wrapper">
+                    <img src="PentHouse.jpg" alt="Luxury Villa">
+                    <span class="price-tag">₦25,000,000</span>
+                </div>
+                <div class="property-info">
+                    <h3>Luxury 5-Bedroom Villa</h3>
+                    <p class="location"><i class="bx bx-map"></i> Island, Lagos State</p>
+                    <a href="property.html" class="btn-view">View Details</a>
+                </div>
+            </article>
+
+            <article class="property-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="image-wrapper">
+                    <img src="PentHouse.jpg" alt="Modern Apartment">
+                    <span class="price-tag">₦2,000,000</span>
+                </div>
+                <div class="property-info">
+                    <h3>Modern Penthouse Apartment</h3>
+                    <p class="location"><i class="bx bx-map"></i> Arepo, Ogun State</p>
+                    <a href="property.html" class="btn-view">View Details</a>
+                </div>
+            </article>
+
+            <article class="property-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="image-wrapper">
+                    <img src="PentHouse.jpg" alt="Seaside Duplex">
+                    <span class="price-tag">₦12,000,000</span>
+                </div>
+                <div class="property-info">
+                    <h3>Elegant 4-Bedroom Duplex</h3>
+                    <p class="location"><i class="bx bx-map"></i> Agbara, Ogun State</p>
+                    <a href="property.html" class="btn-view">View Details</a>
+                </div>
+            </article>
+
+            <article class="property-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="image-wrapper">
+                    <img src="PentHouse.jpg" alt="Affordable Home">
+                    <span class="price-tag">₦7,500,000</span>
+                </div>
+                <div class="property-info">
+                    <h3>Affordable 3-Bedroom Home</h3>
+                    <p class="location"><i class="bx bx-map"></i> Abeokuta, Ogun State</p>
+                    <a href="property.html" class="btn-view">View Details</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <a href="#" class="page active">1</a>
+            <a href="#" class="page">2</a>
+            <a href="#" class="page">3</a>
+            <a href="#" class="page next"><i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Beth<span>Realty</span></h3>
+                <p>Luxury Real Estate | Ogun State, Nigeria</p>
+            </div>
+
+            <div>
+                <p>Follow us</p>
+                <div class="socials">
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 BethRealty. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        menuToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
+    </script>
+</body>
+
+</html>
