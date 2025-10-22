@@ -40,6 +40,15 @@ a {
     z-index: 1000;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+
 .nav-content {
     display: flex;
     justify-content: space-between;
@@ -109,15 +118,17 @@ a {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('hero-bg.jpg') no-repeat center center/cover;
+    background: url('/Seaside.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -229,14 +240,14 @@ a {
 
 .listing-card {
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .listing-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
 }
 
 .listing-card img {
@@ -887,21 +898,70 @@ a {
 
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .navbar {
+    height: 50%;
+    background: #fffdfd;
+}
     .nav-links {
         display: none;
         flex-direction: column;
         gap: 1rem;
         background: #fff;
+        align-items: center;
         position: absolute;
+        border-top: 1px solid #ddd;
         top: 100%;
         right: 0;
         width: 200px;
         padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        /* animation */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.4s ease;
     }
 
     .nav-links.active {
-        display: flex;
+      max-height: 400px;
+      animation: slideFadeIn 0.4s ease forwards;
+      opacity: 1;
+      transform: translateY(0);
+      display: flex;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-links li{
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .nav-links li a{
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #0078ff;
     }
 
     .btn-cta {
@@ -975,5 +1035,144 @@ a {
 
   .socials-icon {
     justify-content: flex-end;
+  }
+}
+
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+
+/* Tablets and below (≤ 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .btn-cta {
+    display: none; /* hides CTA button in navbar on small screens */
+  }
+
+  /* Hero */
+  .hero {
+    height: 80vh;
+    padding: 2rem 1rem;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  /* Listings */
+  .listings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Why Choose */
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog page layout (article + sidebar) */
+  .blog-container {
+    grid-template-columns: 1fr; /* stack */
+  }
+  .blog-sidebar {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (≤ 480px) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  .listing-info h3 {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    order: -1; /* move to left end */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .btn-cta {
+    display: block; /* show inside dropdown */
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
   }
 }

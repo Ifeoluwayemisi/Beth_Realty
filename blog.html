@@ -38,6 +38,7 @@ src="https://www.facebook.com/tr?id=1505306210884176&ev=PageView&noscript=1"
       </a>
 
       <nav aria-label="Primary">
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
         <ul class="nav-links">
           <li><a href="index.html#hero">Home</a></li>
           <li><a href="index.html#listing">Listing</a></li>
@@ -224,5 +225,22 @@ src="https://www.facebook.com/tr?id=1505306210884176&ev=PageView&noscript=1"
     </div>
     <p class="footer-bottom">&copy; 2024 Bethtrealty. All rights reserved.</p>
 </footer>  
+
+<script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
