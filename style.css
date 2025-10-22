@@ -1053,47 +1053,43 @@ a {
 }
 
 /* Hero section */
-.listings-hero {
-  position: relative;
-  background: url("images/hero-bg.jpg") center/cover no-repeat;
-  color: #fff;
-  padding: 8rem 1rem 10rem;
-  text-align: center;
-}
-.listings-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
 .hero-text {
   position: relative;
   z-index: 2;
   max-width: 700px;
   margin: auto;
 }
+.listings-hero {
+  background: linear-gradient(to right, #0b132b, #1c2541);
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+}
+
 .listings-hero h1 {
   font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
+
 .listings-hero p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
 }
 
 /* Filter bar */
-.filter-bar {
+/* .filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   background: #fff;
-  padding: 1.2rem;
+  /* padding: 1.2rem; */
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   justify-content: center;
-  margin-top: -3rem;
-  position: relative;
-  z-index: 3;
+  /* margin-top: -3rem;
+  position: relative; */
+  /* z-index: 3; */
 }
 .filter-bar select,
 .filter-bar button {
@@ -1112,6 +1108,39 @@ a {
 }
 .btn-filter:hover {
   background: #333;
+} */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.filter-bar select, 
+.filter-bar button {
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.filter-bar select {
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.btn-filter {
+  background: #ff914d;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-filter:hover {
+  background: #e46f23;
 }
 
 /* Property grid */
