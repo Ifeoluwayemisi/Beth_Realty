@@ -1078,19 +1078,19 @@ a {
 }
 
 /* Filter bar */
-/* .filter-bar {
+/* /* .filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   background: #fff;
   /* padding: 1.2rem; */
-  border-radius: 12px;
+  /* border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  justify-content: center;
+  justify-content: center; */
   /* margin-top: -3rem;
   position: relative; */
   /* z-index: 3; */
-}
+/* } */
 .filter-bar select,
 .filter-bar button {
   padding: 0.8rem 1rem;
@@ -1108,7 +1108,7 @@ a {
 }
 .btn-filter:hover {
   background: #333;
-} */
+} */ */
 
 .filter-bar {
   display: flex;
