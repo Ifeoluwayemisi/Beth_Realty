@@ -199,3 +199,22 @@ if (navLinks) {
     });
   });
 }
+
+const listings = document.querySelectorAll(".property-card");
+const itemsPerPage = 6;
+let currentPage = 1;
+
+function showPage(page) {
+  listings.forEach((item, index) => {
+    item.style.display =
+      index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+        ? "block"
+        : "none";
+  });
+}
+
+document.querySelectorAll(".pagination a").forEach((btn, index) => {
+  btn.addEventListener("click", () => showPage(index + 1));
+});
+
+showPage(currentPage);
