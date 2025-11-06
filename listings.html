@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
 <body>
@@ -159,6 +159,23 @@
         const menuToggle = document.getElementById("menu-toggle");
         const navLinks = document.querySelector(".nav-links");
         menuToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
+
+        document.querySelectorAll('.btn-view').forEach(button => {
+            button.addEventListener('click', e => {
+                const card = e.target.closest('.property-card');
+                const id = parseInt(card.dataset.id);
+
+                // find the property in the array
+                const selectedProperty = properties.find(p => p.id === id);
+
+                // save to localStorage
+                localStorage.setItem('beth_selected_property', JSON.stringify(selectedProperty));
+
+                // redirect to property page
+                window.location.href = 'property.html';
+            });
+        });
+
     </script>
 </body>
 
