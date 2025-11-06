@@ -1,0 +1,20 @@
+const property = JSON.parse(localStorage.getItem('beth_selected_property'));
+
+if (property) {
+document.getElementById('propertyTitle').textContent = property.title;
+document.getElementById('propertyPrice').textContent = property.price;
+document.getElementById('propertyLocation').textContent = property.location;
+document.getElementById('mainImage').src = property.image;
+document.querySelector('.desc').textContent = property.description;
+
+const featureList = document.querySelector('.features');
+featureList.innerHTML = property.features
+.map(f => `<li><i class="bx bx-check"></i> ${f}</li>`)
+.join('');
+
+// Add image thumbnails dynamically
+const thumbRow = document.querySelector('.thumbnail-row');
+thumbRow.innerHTML = property.gallery
+.map(img => `<img src="${img}" class="thumb" alt="${property.title}">`)
+.join('');
+}

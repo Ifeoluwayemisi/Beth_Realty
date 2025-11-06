@@ -71,7 +71,8 @@
     <section class="property-listings container">
         <div class="grid">
             <!-- PROPERTY CARD -->
-            <article class="property-card" data-aos="zoom-in" onclick="window.location.href='property.html?id=1'" data-id="1">
+            <article class="property-card" data-aos="zoom-in" onclick="window.location.href='property.html?id=1'"
+                data-id="1">
                 <div class="image-wrapper">
                     <img src="PentHouse.jpg" alt="Luxury Villa">
                     <span class="price-tag">₦25,000,000</span>
@@ -156,6 +157,23 @@
         const menuToggle = document.getElementById("menu-toggle");
         const navLinks = document.querySelector(".nav-links");
         menuToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
+
+        document.querySelectorAll('.btn-view').forEach(button => {
+            button.addEventListener('click', e => {
+                const card = e.target.closest('.property-card');
+                const id = parseInt(card.dataset.id);
+
+                // find the property in the array
+                const selectedProperty = properties.find(p => p.id === id);
+
+                // save to localStorage
+                localStorage.setItem('beth_selected_property', JSON.stringify(selectedProperty));
+
+                // redirect to property page
+                window.location.href = 'property.html';
+            });
+        });
+
     </script>
 </body>
 
